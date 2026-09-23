@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership - Sewu Dino</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #fff;
+        }
+
+        header {
+            background: #1b1b1b;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #8b0000;
+        }
+
+        header h1 {
+            color: #d4af37;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #ccc;
+        }
+
+        nav {
+            background: #222;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #8b0000;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title h2 {
+            color: #d4af37;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .title p {
+            color: #ccc;
+        }
+
+        .membership {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #1d1d1d;
+            border: 1px solid #444;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .card.premium {
+            border: 2px solid #d4af37;
+        }
+
+        .card h3 {
+            color: #d4af37;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 25px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .price span {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .card ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .card li {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            color: #ddd;
+        }
+
+        .card li::before {
+            content: "✓ ";
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: block;
+            background: #8b0000;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #b30000;
+        }
+
+        .info {
+            margin-top: 30px;
+            background: #222;
+            border-left: 4px solid #d4af37;
+            padding: 15px;
+            color: #ccc;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 50px;
+            background: #1b1b1b;
+            text-align: center;
+            padding: 20px;
+            color: #aaa;
+            border-top: 2px solid #8b0000;
+        }
+
+        @media (max-width: 600px) {
+            .title h2 {
+                font-size: 24px;
+            }
+
+            nav a {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>🩸 Sewu Dino</h1>
+        <p>Website Informasi Film Sewu Dino</p>
+    </header>
+
+    <!-- NAVBAR -->
+    <nav>
+        <a href="beranda.html">Beranda</a>
+        <a href="sinopsis.html">Sinopsis</a>
+        <a href="pemeran.html">Pemeran</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="membership.html" class="active">Membership</a>
+        <a href="kontak.html">Kontak</a>
+    </nav>
+
+    <!-- CONTENT -->
+    <div class="container">
+
+        <div class="title">
+            <h2>🩸 Membership Sewu Dino</h2>
+            <p>
+                Pilih paket membership sesuai dengan kebutuhanmu
+                untuk mendapatkan konten eksklusif Sewu Dino.
+            </p>
+        </div>
+
+        <div class="membership">
+
+            <!-- BASIC -->
+            <div class="card">
+                <h3>Basic</h3>
+
+                <div class="price">
+                    Rp19.000 <span>/ bulan</span>
+                </div>
+
+                <ul>
+                    <li>Akses informasi film</li>
+                    <li>Akses sinopsis</li>
+                    <li>Akses daftar pemeran</li>
+                    <li>Akses galeri dasar</li>
+                </ul>
+
+                <a href="#" class="btn"
+                   onclick="pilihPaket('Basic')">
+                    Pilih Membership
+                </a>
+            </div>
+
+            <!-- PREMIUM -->
+            <div class="card premium">
+                <h3>Premium</h3>
+
+                <div class="price">
+                    Rp39.000 <span>/ bulan</span>
+                </div>
+
+                <ul>
+                    <li>Semua fitur Basic</li>
+                    <li>Akses galeri eksklusif</li>
+                    <li>Fakta menarik Sewu Dino</li>
+                    <li>Konten di balik layar</li>
+                    <li>Tanpa iklan</li>
+                </ul>
+
+                <a href="#" class="btn"
+                   onclick="pilihPaket('Premium')">
+                    Pilih Membership
+                </a>
+            </div>
+
+            <!-- ULTIMATE -->
+            <div class="card">
+                <h3>Ultimate</h3>
+
+                <div class="price">
+                    Rp59.000 <span>/ bulan</span>
+                </div>
+
+                <ul>
+                    <li>Semua fitur Premium</li>
+                    <li>Seluruh galeri eksklusif</li>
+                    <li>Konten behind the scene</li>
+                    <li>Akses konten terbaru</li>
+                    <li>Bonus merchandise digital</li>
+                </ul>
+
+                <a href="#" class="btn"
+                   onclick="pilihPaket('Ultimate')">
+                    Pilih Membership
+                </a>
+            </div>
+
+        </div>
+
+        <div class="info">
+            <p>
+                💡 <b>Catatan:</b> Halaman membership ini merupakan
+                simulasi untuk keperluan projek website.
+                Tidak terdapat proses pembayaran nyata.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Sewu Dino. All Rights Reserved.</p>
+        <p>Website Projek Pemrograman Web</p>
+    </footer>
+
+    <script>
+        function pilihPaket(paket) {
+            alert(
+                "Kamu memilih Membership " +
+                paket +
+                " Sewu Dino."
+            );
+        }
+    </script>
+
+</body>
+</html>ssss
