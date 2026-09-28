@@ -9,81 +9,102 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #080808;
+            background-color: #111;
             color: white;
         }
 
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: auto;
+        }
+
         header {
-            background-color: #151515;
-            padding: 25px;
             text-align: center;
-            border-bottom: 2px solid #8b0000;
+            padding: 30px 0 20px;
         }
 
         header h1 {
-            color: #d00000;
+            color: #ff4d4d;
             margin: 0;
-            font-size: 35px;
+            font-size: 32px;
+        }
+
+        header p {
+            color: #ddd;
+            margin-top: 8px;
         }
 
         nav {
             text-align: center;
-            padding: 15px;
-            background-color: #101010;
+            padding: 15px 0;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
-            padding: 8px 12px;
-            border-radius: 5px;
+            margin: 0 14px;
+            font-weight: bold;
         }
 
         nav a:hover {
-            background-color: #8b0000;
+            color: #ff4d4d;
         }
 
-        .container {
-            max-width: 800px;
+        .content {
             margin: 40px auto;
-            padding: 30px;
-            background-color: #181818;
-            border-radius: 12px;
         }
 
-        h2 {
-            color: #d00000;
+        .content h2 {
             text-align: center;
+            color: #ff4d4d;
+            margin-bottom: 30px;
         }
 
-        .pemeran {
-            padding: 15px;
-            margin: 15px 0;
+        .actor {
+            display: flex;
+            align-items: center;
             background-color: #222;
-            border-left: 4px solid #8b0000;
-            border-radius: 6px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff4d4d;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
         }
 
-        .pemeran h3 {
-            margin-top: 0;
-            color: #e00000;
+        .actor img {
+            width: 130px;
+            height: 150px;
+            object-fit: cover;
         }
 
-        .pemeran p {
+        .actor-info {
+            padding: 20px;
+        }
+
+        .actor-info h3 {
+            color: #ff4d4d;
+            margin: 0 0 10px;
+        }
+
+        .actor-info p {
+            margin: 0;
             color: #ddd;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
-            color: #888;
-            margin-top: 50px;
+            color: #777;
+            padding: 30px 0;
         }
     </style>
 </head>
 
 <body>
+
+<div class="container">
 
     <header>
         <h1>SEWU DINO</h1>
@@ -91,40 +112,50 @@
     </header>
 
     <nav>
-        <a href="beranda.html">Beranda</a>
+        <a href="index.html">Home</a>
         <a href="sinopsis.html">Sinopsis</a>
         <a href="pemeran.html">Pemeran</a>
         <a href="galeri.html">Galeri</a>
+        <a href="membership.html">Membership</a>
+        <a href="rating.html">Rating</a>
         <a href="kontak.html">Kontak</a>
     </nav>
 
-    <div class="container">
+    <div class="content">
+
         <h2>Daftar Pemeran</h2>
 
-        <div class="pemeran">
-            <h3>Mikha Tambayong</h3>
-            <p>Berperan sebagai Sri.</p>
+        <div class="actor">
+            <img src="images/mikha.jpeg" alt="Mikha Tambayong">
+            <div class="actor-info">
+                <h3>Mikha Tambayong</h3>
+                <p>Berperan sebagai Sri.</p>
+            </div>
         </div>
 
-        <div class="pemeran">
-            <h3>Gisellma Firmansyah</h3>
-            <p>Berperan sebagai Della.</p>
+        <div class="actor">
+            <img src="images/gisellma.jpeg" alt="Gisellma Firmansyah">
+            <div class="actor-info">
+                <h3>Gisellma Firmansyah</h3>
+                <p>Berperan sebagai Della Atmojo.</p>
+            </div>
         </div>
 
-        <div class="pemeran">
-            <h3>Raihaanun</h3>
-            <p>Berperan sebagai Minah.</p>
+        <div class="actor">
+            <img src="images/marthino.jpeg" alt="Marthino Lio">
+            <div class="actor-info">
+                <h3>Marthino Lio</h3>
+                <p>Berperan sebagai Sabdo Kuncoro.</p>
+            </div>
         </div>
 
-        <div class="pemeran">
-            <h3>Marthino Lio</h3>
-            <p>Salah satu pemeran dalam film Sewu Dino.</p>
-        </div>
     </div>
 
     <footer>
-        &copy; 2026 Website Sewu Dino
+        <p>© 2026 Sewu Dino - Website Informasi Film</p>
     </footer>
+
+</div>
 
 </body>
 </html>
