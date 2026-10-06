@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registrasi | Sewu Dino</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(ellipse at top, #321010 0%, #100909 45%, #050505 100%);
+    color: #eee;
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+nav {
+    background: #080707;
+    border-bottom: 1px solid #6e1717;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: #d92727;
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-shadow: 0 0 15px #a00000;
+}
+
+.nav-link {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-link:hover {
+    color: #ff3838;
+}
+
+/* FORM CONTAINER */
+main {
+    width: min(900px, 92%);
+    margin: 45px auto;
+}
+
+.form-container {
+    background: rgba(10, 8, 8, 0.96);
+    border: 1px solid #762020;
+    border-radius: 8px;
+    padding: 38px;
+    box-shadow: 0 0 35px #50000030;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    color: #eee;
+    font-size: clamp(25px, 4vw, 36px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 13px;
+}
+
+.header .line {
+    width: 180px;
+    height: 2px;
+    background: #c51e1e;
+    margin: 0 auto 16px;
+    box-shadow: 0 0 10px #a00;
+}
+
+.header p {
+    color: #bdb4b4;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* LAYOUT FORM */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 32px;
+}
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+label, .section-title {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 14px;
+    color: #eee;
+    background: #100d0d;
+    border: 1px solid #722020;
+    border-radius: 7px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+input::placeholder {
+    color: #827777;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #ff3939;
+    box-shadow: 0 0 8px #b0000030;
+}
+
+select option {
+    background: #151010;
+    color: white;
+}
+
+/* PAKET */
+.package-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+    margin-top: 13px;
+}
+
+.package-card {
+    position: relative;
+    background: #100d0d;
+    border: 1px solid #542020;
+    border-radius: 7px;
+    padding: 15px 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.package-card:has(input:checked) {
+    border-color: #ff3030;
+    background: #3a1111;
+    box-shadow: 0 0 12px #8e000030;
+}
+
+.package-card input {
+    accent-color: #f22;
+    margin-bottom: 9px;
+}
+
+.package-card strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.package-card small {
+    display: block;
+    color: #aaa;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.package-card .price {
+    color: #ff7777;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+/* PEMBAYARAN */
+.payment-option {
+    display: block;
+    border: 1px solid #602020;
+    background: #0e0b0b;
+    border-radius: 8px;
+    padding: 17px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.payment-option:has(input[type="radio"]:checked) {
+    border-color: #e52c2c;
+    background: #1b0d0d;
+}
+
+.payment-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.payment-heading input {
+    accent-color: #f22;
+}
+
+.payment-heading span {
+    font-weight: bold;
+}
+
+.logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 8px 0 13px 25px;
+}
+
+.logo-chip {
+    padding: 6px 9px;
+    border-radius: 4px;
+    background: #211919;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.visa { color: #649aff; }
+.mastercard { color: #ff7777; }
+.dana { color: #63baff; }
+.ovo { color: #bca0ff; }
+.gopay { color: #75d8ff; }
+.linkaja { color: #ff7373; }
+
+.card-input {
+    margin-left: 25px;
+}
+
+.card-input label {
+    font-size: 13px;
+    color: #c9bebe;
+}
+
+.note {
+    color: #938888;
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+/* BUTTON */
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 10px;
+    border: 1px solid #ed3333;
+    border-radius: 6px;
+    background: linear-gradient(110deg, #a30c0c, #e12626, #890909);
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.submit-btn:hover {
+    background: #ff2929;
+    box-shadow: 0 0 20px #c0000060;
+    transform: translateY(-2px);
+}
+
+.back-link {
+    display: block;
+    width: fit-content;
+    margin: 23px auto 0;
+    color: #ff6666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    color: white;
+}
+
+footer {
+    border-top: 1px solid #572020;
+    background: #080707;
+    text-align: center;
+    padding: 24px 15px;
+    color: #887d7d;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 650px) {
+    nav {
+        padding: 17px 5%;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    main {
+        margin: 25px auto;
+    }
+
+    .form-container {
+        padding: 24px 17px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .package-options {
+        gap: 6px;
+    }
+
+    .package-card {
+        padding: 12px 5px;
+    }
+
+    .package-card strong {
+        font-size: 12px;
+    }
+
+    .package-card small {
+        font-size: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="../beranda.html" class="logo">SEWU DINO</a>
+    <a href="home.html" class="nav-link">← Katalog Film</a>
+</nav>
+
+<main>
+    <section class="form-container">
+
+        <div class="header">
+            <h1>Registrasi Pelanggan</h1>
+            <div class="line"></div>
+            <p>
+                Nikmati pengalaman menjelajahi film horror Indonesia.
+                <br>Daftarkan diri dan pilih paket langgananmu.
+            </p>
+        </div>
+
+        <form id="registrationForm">
+            <div class="form-grid">
+
+                <!-- DATA PELANGGAN -->
+                <div>
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" id="nama" name="nama"
+                               placeholder="Masukkan nama lengkap" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="Masukkan email Anda" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password"
+                               placeholder="Minimal 8 karakter"
+                               minlength="8" required>
+                    </div>
+                </div>
+
+                <!-- PAKET DAN PEMBAYARAN -->
+                <div>
+                    <div class="form-group">
+                        <span class="section-title">Pilih Paket</span>
+
+                        <select id="paket" name="paket" required>
+                            <option value="">-- Pilih Paket --</option>
+                            <option value="Basic">Basic</option>
+                            <option value="Standar">Standar</option>
+                            <option value="Premium">Premium</option>
+                        </select>
+
+                        <div class="package-options">
+
+                            <label class="package-card">
+                                <input type="radio" name="paketVisual"
+                                       value="Basic" required>
+                                <strong>Basic</strong>
+                                <small>Akses film tertentu</small>
+                                <span class="price">Rp49.000/bln</span>
+                            </label>
+
+                            <label class="package-card">
+                                <input type="radio" name="paketVisual"
+                                       value="Standar">
+                                <strong>Standar</strong>
+                                <small>Akses semua film</small>
+                                <span class="price">Rp79.000/bln</span>
+                            </label>
+
+                            <label class="package-card">
+                                <input type="radio" name="paketVisual"
+                                       value="Premium">
+                                <strong>Premium</strong>
+                                <small>Konten eksklusif</small>
+                                <span class="price">Rp129.000/bln</span>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="section-title">Pilih Pembayaran</span>
+
+                        <label class="payment-option">
+                            <div class="payment-heading">
+                                <input type="radio" name="pembayaran"
+                                       value="Kartu Debit/Kredit" required checked>
+                                <span>Kartu Debit/Kredit</span>
+                            </div>
+
+                            <div class="logos">
+                                <span class="logo-chip visa">VISA</span>
+                                <span class="logo-chip mastercard">● Mastercard</span>
+                            </div>
+
+                            <div class="card-input" id="cardInput">
+                                <label for="nomorKartu">Nomor Kartu</label>
+                                <input type="text" id="nomorKartu"
+                                       name="nomorKartu"
+                                       placeholder="Masukkan nomor kartu"
+                                       inputmode="numeric"
+                                       pattern="[0-9 ]{13,23}"
+                                       minlength="13" maxlength="23" required>
+                                <p class="note">
+                                    Gunakan data contoh saja untuk demonstrasi.
+                                    Jangan masukkan nomor kartu asli.
+                                </p>
+                            </div>
+                        </label>
+
+                        <label class="payment-option">
+                            <div class="payment-heading">
+                                <input type="radio" name="pembayaran"
+                                       value="Dompet Digital">
+                                <span>Dompet Digital</span>
+                            </div>
+
+                            <div class="logos">
+                                <span class="logo-chip dana">DANA</span>
+                                <span class="logo-chip ovo">OVO</span>
+                                <span class="logo-chip gopay">GoPay</span>
+                                <span class="logo-chip linkaja">LinkAja</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <button type="submit" class="submit-btn">
+                ✦ DAFTAR SEKARANG ✦
+            </button>
+        </form>
+
+        <a href="home.html" class="back-link">
+            ← Kembali ke Katalog Film
+        </a>
+
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Sewu Dino — Horror Film Indonesia</p>
+    <p>Lebih dari sekadar film, ini adalah pengalaman.</p>
+</footer>
+
+<script>
+const paketSelect = document.getElementById("paket");
+const paketRadio = document.querySelectorAll('input[name="paketVisual"]');
+
+paketRadio.forEach(function(radio) {
+    radio.addEventListener("change", function() {
+        paketSelect.value = this.value;
+    });
+});
+
+paketSelect.addEventListener("change", function() {
+    paketRadio.forEach(function(radio) {
+        radio.checked = radio.value === paketSelect.value;
+    });
+});
+
+const paymentRadios = document.querySelectorAll('input[name="pembayaran"]');
+const cardInput = document.getElementById("cardInput");
+const nomorKartu = document.getElementById("nomorKartu");
+
+function updatePayment() {
+    const selected = document.querySelector(
+        'input[name="pembayaran"]:checked'
+    ).value;
+
+    const useCard = selected === "Kartu Debit/Kredit";
+
+    cardInput.style.display = useCard ? "block" : "none";
+    nomorKartu.required = useCard;
+
+    if (!useCard) {
+        nomorKartu.value = "";
+    }
+}
+
+paymentRadios.forEach(function(radio) {
+    radio.addEventListener("change", updatePayment);
+});
+
+updatePayment();
+
+document.getElementById("registrationForm")
+.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    alert(
+        "Registrasi berhasil disimulasikan!\\n\\n" +
+        "Nama: " + document.getElementById("nama").value + "\\n" +
+        "Email: " + document.getElementById("email").value + "\\n" +
+        "Paket: " + paketSelect.value + "\\n" +
+        "Pembayaran: " +
+        document.querySelector('input[name="pembayaran"]:checked').value
+    );
+});
+</script>
+
+</body>
+</html>
