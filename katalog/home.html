@@ -8,6 +8,34 @@
     <title>Horror Film Indonesia</title>
 
     <link rel="stylesheet" href="style-katalog.css">
+
+    <style>
+        /* MEMASTIKAN SEMUA FILM TAMPIL */
+        .film-container {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 25px !important;
+        }
+
+        .film-card {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        @media (max-width: 800px) {
+            .film-container {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .film-container {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
